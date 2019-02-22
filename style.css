@@ -4,7 +4,7 @@
     --grey: #ADAEB4;
     --activeBlue: #008EFF;
     --lightMint: #e8f5f580;
-    font: 20px;
+    font: 20px 'Open Sans', sans-serif;
 }
 
 html, body {
@@ -19,23 +19,23 @@ html, body {
     grid-template: 7vh 93vh / 5% 9% auto;
     grid-template-areas: 
         "h h h h h h h h h h h h"
-        "n a a a m m m m m m m m";
+        "n a a m m m m m m m m m";
 }
 
 .header {
     grid-area: h;
     background: #fff;
-    box-shadow: 0px 5px rgba(170, 161, 161, 0.1);
-    z-index: 1;
     font-size: 18px;
     display: flex;
+    box-shadow: 0 5px 25px -5px var(--grey);
 }
 
 .header a {
+    padding-left: 35px;
     display: flex;
     align-items: center;
-    font-size: 25px;
-    width: 30%;
+    font-size: 22px;
+    width: 24.73%;
     text-decoration: none;
     color: var(--activeBlue);
 }
@@ -43,36 +43,49 @@ html, body {
 
 .header .logo {
     width: 40px;
-    height: 50px;
+    height: 45px;
 }
 
 .header .search {
-    width: 45%;
+    width: 51.27%;
     display: flex;
     align-items: center;
 }
 
 .header .search i {
     border-left: 2px solid #e8f5f580;
-    padding: 5px;
+    padding: 7px;
+    color: var(--grey);
+    font-size: 24px;
+    -webkit-text-stroke: 2px var(--white);
+
+}
+
+.search input {
+    font-size: 18px;
+    border: 0;
+    outline: none;
+    padding-left: 5px;
 }
 
 .header .staff-options {
-    width: 25%;
+    width: 24%;
     display: flex;
     height: 100%;
     align-items: center;
 }
 
-.staff-options button.create-documentation {
+.staff-options .create-documentation {
     padding: 15px;
-    margin-right: 50px;
+    margin-right: 40px;
     background: linear-gradient(101.3deg, #F46B45 0%, #EEA849 100%);
     border: 0px;
     border-radius: 6px;
     outline: none;
     color:  var(--white);
     cursor: pointer;
+    font-size: 15px;
+
 }
 
 button.create-documentation:hover {
@@ -96,20 +109,201 @@ button.create-documentation:hover {
 .doctor-staff p {
     cursor: pointer;
     color: #9AA6CE;
-    font-size: 16px;
+    font-size: 18px;
 }
 
-.nav {
+.sideMenu {
+    height: 95vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     grid-area: n;
     background: linear-gradient(180deg, #0072FF 0%, #00C6FF 100%);
+
 }
 
-.aside {
-    grid-area: a;
-    background: #fff;
+.sideMenu .icons {
+    height: 92%;
+    width: 100%;
+    border: 1px solid #fff;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    align-items: center;
 }
+
+.icons .icon {
+    height: 8%;
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.icons .icon:hover {
+    border-left: 4px solid #00C6FF;
+    color: #00C6FF;
+}
+
+.icons i {
+    /* height: 9%; */
+    font-size: 26px;
+    cursor: pointer;
+    
+}
+
+.icons .arrow-right {
+    margin-top: auto;
+    height: 3%;
+    text-decoration: underline;
+}
+
+.icons .arrow-right:hover {
+    color: #0072FF;
+}
+
+/*
+    Patients List
+*/
+
+.aside {
+    position: relative;
+    grid-area: a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fff;
+    box-shadow: 0 -1px 0px 0px rgba(107, 105, 105, 0.1);
+}
+
+.aside .patientOption {
+    position: relative;
+    top: 0;
+    width: 80%;
+    height: 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.patientOption h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--greyBlack);
+}
+
+.patientOption select {
+    border: 0px;
+    background: none;
+    outline: none;
+    font-size: 15px;
+    color: #9AA6CE;
+    cursor: pointer;
+}
+
+.patientOption i {
+    -webkit-text-stroke: 1px var(--white);
+}
+
+.patientList {
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 80%;
+    height: 93%;
+    padding-top: 10px;
+}
+
+.patientList::-webkit-scrollbar {
+    background-color:#fff;
+    width:8px
+}
+
+.patientList::-webkit-scrollbar-track {
+    background-color:#fff
+}
+
+.patientList::-webkit-scrollbar-thumb {
+    background-color:#cfdedf;
+    border-radius:16px;
+    border:1px solid #fff;
+}
+
+
+.patient {
+    display: flex;
+    width: 100%;
+    height: 6vh;
+    align-items: center;
+    padding: 10px 5px;
+    margin-bottom: 10px;
+}
+
+.patient:hover{
+    border-radius: 6px;
+    background: #e8f5f580;
+    cursor: pointer;
+}
+
+.patient .imageholder {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+    color: var(--white);
+}
+
+.gradientpadding {
+    padding: 1px;
+}
+
+.patient .imageholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+#gradientJ {
+    background: linear-gradient(180deg, #A26FED  0%,#EE86BF  90%);
+}
+
+#gradientL {
+    background: linear-gradient(180deg, #F25555 0%, #FB72AE 70%);
+}
+
+#gradientR {
+    background: linear-gradient(180deg, #B482D3  0%, #A2ACF1  90%);
+}
+
+#gradientC {
+    background: linear-gradient(180deg, #FFB064  0%, #FFE35A 75%);
+}
+
+
+.patient .patientName {
+    width: 70%;
+}
+
+.patientName i {
+    -webkit-text-stroke: 1px var(--white);
+}
+
+.patientName small {
+    font-size: 16px;
+    color: var(--grey);
+}
+
+
+/*
+    Main Area
+*/
 
 .main {
     grid-area: m;
     background: #e8f5f580;
+    overflow-y: auto;
 }

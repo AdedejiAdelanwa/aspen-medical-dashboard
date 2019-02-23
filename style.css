@@ -1,8 +1,10 @@
 :root {
     --white: #ffffff;
-    --greyBlack: #434B65;
-    --grey: #ADAEB4;
+    --blackText: #434B65;
+    --greyText: #ADAEB4;
+    --otherGrey: #9AA6CE;
     --activeBlue: #008EFF;
+    --navLink: #43ACFF;
     --lightMint: #e8f5f580;
     font: 20px 'Open Sans', sans-serif;
 }
@@ -27,17 +29,17 @@ html, body {
     background: #fff;
     font-size: 18px;
     display: flex;
-    box-shadow: 0 5px 25px -5px var(--grey);
+    box-shadow: 0 5px 25px -5px var(--greyText);
 }
 
 .header a {
     padding-left: 35px;
     display: flex;
     align-items: center;
-    font-size: 22px;
+    font-size: 24px;
     width: 24.73%;
     text-decoration: none;
-    color: var(--activeBlue);
+    color: #0271EE;
 }
 
 
@@ -53,9 +55,9 @@ html, body {
 }
 
 .header .search i {
-    border-left: 2px solid #e8f5f580;
+    border-left: 2px solid rgba(169, 179, 210,0.502);
     padding: 7px;
-    color: var(--grey);
+    color: rgba(169, 179, 210, 0.7);
     font-size: 24px;
     -webkit-text-stroke: 2px var(--white);
 
@@ -67,6 +69,16 @@ html, body {
     outline: none;
     padding-left: 5px;
 }
+
+::placeholder { /* Firefox, Chrome, Safari */
+    color: #A9B3D2;
+ 
+  }
+
+::-ms-input-placeholder { /* Microsoft Edge , Internet Explorer 10-11*/
+    color: #A9B3D2;
+   }
+   
 
 .header .staff-options {
     width: 24%;
@@ -108,7 +120,7 @@ button.create-documentation:hover {
 
 .doctor-staff p {
     cursor: pointer;
-    color: #9AA6CE;
+    color: var(--otherGrey);
     font-size: 18px;
 }
 
@@ -118,14 +130,12 @@ button.create-documentation:hover {
     justify-content: center;
     align-items: center;
     grid-area: n;
-    background: linear-gradient(180deg, #0072FF 0%, #00C6FF 100%);
-
+    background: linear-gradient(180deg, #0072ff 35%, #00C6FF 85%);
 }
 
 .sideMenu .icons {
     height: 92%;
     width: 100%;
-    border: 1px solid #fff;
     display: flex;
     flex-direction: column;
     color: #fff;
@@ -138,16 +148,14 @@ button.create-documentation:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 .icons .icon:hover {
-    border-left: 4px solid #00C6FF;
-    color: #00C6FF;
+    border-left: 4px solid #2be1cb;
+    color: #2be1cb;
 }
 
 .icons i {
-    /* height: 9%; */
     font-size: 26px;
     cursor: pointer;
     
@@ -174,6 +182,7 @@ button.create-documentation:hover {
     flex-direction: column;
     align-items: center;
     background: #fff;
+    color: var(--blackText);
     box-shadow: 0 -1px 0px 0px rgba(107, 105, 105, 0.1);
 }
 
@@ -187,19 +196,23 @@ button.create-documentation:hover {
     align-items: flex-end;
 }
 
-.patientOption h2 {
-    font-size: 1.5rem;
+.patientOption p, .main p {
+    font-size: 1.6rem;
     font-weight: 600;
-    color: var(--greyBlack);
+    color: var(--blackText);
 }
 
-.patientOption select {
+.patientOption select, .doctor-staff select {
     border: 0px;
     background: none;
     outline: none;
     font-size: 15px;
-    color: #9AA6CE;
+    color: var(--otherGrey);
     cursor: pointer;
+}
+
+.doctor-staff > select {
+    font: 30px;
 }
 
 .patientOption i {
@@ -224,7 +237,7 @@ button.create-documentation:hover {
 }
 
 .patientList::-webkit-scrollbar-thumb {
-    background-color:#cfdedf;
+    background-color:rgba(169, 179, 210,0.2);
     border-radius:16px;
     border:1px solid #fff;
 }
@@ -239,7 +252,7 @@ button.create-documentation:hover {
     margin-bottom: 10px;
 }
 
-.patient:hover{
+.patientList .patient:hover{
     border-radius: 6px;
     background: #e8f5f580;
     cursor: pointer;
@@ -293,8 +306,8 @@ button.create-documentation:hover {
 }
 
 .patientName small {
-    font-size: 16px;
-    color: var(--grey);
+    font-size: 14px;
+    color: var(--greyText);
 }
 
 
@@ -304,6 +317,42 @@ button.create-documentation:hover {
 
 .main {
     grid-area: m;
-    background: #e8f5f580;
+    background: rgba(232, 245, 245, 0.502);
     overflow-y: auto;
 }
+
+.main .patient {
+    width: 50%;
+    height: 12vh;
+}
+
+.main .imageholder {
+    margin-left: 40px;
+    width: 73px;
+    height: 73px; 
+}
+
+.main nav {
+    width: 100%;
+    height: 4vh;
+    display: flex;
+    box-shadow: 0px 1px var(--otherGrey);
+}
+
+.main .navLinks {
+    display: flex;
+    width: 45%;
+    height: 100%;
+    margin-left: 40px;
+    justify-content: space-between;
+    list-style: none;
+    font-size: 18px;
+    color: var(--navLink);
+
+}
+
+.navLinks a:focus {
+    height: 100%;
+    border-bottom: 2px solid #008EFF;
+}
+

@@ -6,7 +6,7 @@
     --activeBlue: #008EFF;
     --navLink: #43ACFF;
     --lightMint: #e8f5f580;
-    font: 20px 'Open Sans', sans-serif;
+    font: 20px 'Roboto', sans-serif;
 }
 
 html, body {
@@ -18,10 +18,11 @@ html, body {
     height: 100%;
     width: 100%;
     display: grid;
-    grid-template: 7vh 93vh / 5% 9% auto;
+    grid-template-columns:  5% 5% 15%;
+    grid-template-rows: 7vh 93vh;
     grid-template-areas: 
         "h h h h h h h h h h h h"
-        "n a a m m m m m m m m m";
+        "n a a a m m m m m m m m";
 }
 
 .header {
@@ -37,7 +38,7 @@ html, body {
     display: flex;
     align-items: center;
     font-size: 24px;
-    width: 24.73%;
+    width: 23%;
     text-decoration: none;
     color: #0271EE;
 }
@@ -49,7 +50,7 @@ html, body {
 }
 
 .header .search {
-    width: 51.27%;
+    width: 52%;
     display: flex;
     align-items: center;
 }
@@ -198,7 +199,7 @@ button.create-documentation:hover {
 
 .patientOption p, .main p {
     font-size: 1.6rem;
-    font-weight: 600;
+    font-weight: 400;
     color: var(--blackText);
 }
 
@@ -280,6 +281,10 @@ button.create-documentation:hover {
     border-radius: 50%;
 }
 
+.imageholder p {
+    font-weight: 500;
+}
+
 #gradientJ {
     background: linear-gradient(180deg, #A26FED  0%,#EE86BF  90%);
 }
@@ -317,8 +322,9 @@ button.create-documentation:hover {
 
 .main {
     grid-area: m;
-    background: rgba(232, 245, 245, 0.502);
+    background: #daebeb80;
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .main .patient {
@@ -329,13 +335,15 @@ button.create-documentation:hover {
 .main .imageholder {
     margin-left: 40px;
     width: 73px;
-    height: 73px; 
+    height: 73px;
+    box-shadow: 0 6px 40px -5px var(--greyText);
 }
 
 .main nav {
     width: 100%;
     height: 4vh;
     display: flex;
+    padding-left: 40px;
     box-shadow: 0px 1px var(--otherGrey);
 }
 
@@ -343,16 +351,158 @@ button.create-documentation:hover {
     display: flex;
     width: 45%;
     height: 100%;
-    margin-left: 40px;
     justify-content: space-between;
     list-style: none;
     font-size: 18px;
     color: var(--navLink);
-
 }
 
 .navLinks a:focus {
     height: 100%;
     border-bottom: 2px solid #008EFF;
 }
+.patientRelative {
+    padding-left: 40px;
+}
 
+.patientRelative > p, .patientDiagnoses > p{
+    font-size: 14px;
+    font-weight: 500;
+    width: 50%;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.relatives {
+    width: 85%;
+    height: 400px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.relatives .relative {
+    width: 30%;
+    height: 100%;
+    border-radius: 9px;
+    background: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    line-height: 1.4;
+}
+
+#add-relative {
+    background: none;
+    border: 2px dashed #A9B3D2;
+    justify-content: center;
+}
+#add-relative a {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#add-relative p {
+    font-size: 16px;
+}
+
+#add-relative img {
+    width: 90px;
+    height: 90px;
+}
+
+.relative img {
+    width: 73px;
+    height: 73px;
+    border-radius: 50%;
+    margin-top: 50px;
+} 
+
+.relative .relName {
+    color: var(--blackText);
+    font-weight: 400;
+}
+
+.relative p {
+    width: 90%;
+    font-size: 1.3rem;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    color: var(--greyText);
+}
+
+.relative small {
+    font-size: 14px;
+    color: var(--greyText);
+    width: 70%;
+}
+
+.contact-icons {
+    height: 73px;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 5px 0;
+}
+
+.contact-icons i {
+    padding: 15px;
+    background: #daebeb80;
+    border-radius: 50%;
+}
+
+.contact-icons i.fa-phone {
+    color: #33CDBA;
+}
+
+.availability {
+    margin-top: 20px;
+}
+
+.contact-icons i.fa-envelope {
+    color: #43ACFF;
+}
+
+.diagnoses {
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.diagnoses .diagnosis {
+    width: 45%;
+    background-color: var(--white);
+    border-radius: 9px;
+    padding: 20px;
+}
+
+.description {
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    color: var(--blackText);
+}
+
+.description p {
+    font-size: 14px;
+    font-weight: 300;
+    width: 85%;
+}
+
+.description i {
+    width: 10%;
+    text-align: right;
+    color: var(--greyText);
+    cursor: pointer;
+}
+
+p.desc-date {
+    font-size: 14px;
+    font-weight: 300;
+    margin-top: 20px;
+    color: var(--greyText);
+}

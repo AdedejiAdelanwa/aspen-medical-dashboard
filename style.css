@@ -630,3 +630,94 @@ span.uzi {
 span.green {
     background-color: rgba(4, 167, 99, 0.8);
 }
+
+
+/*
+    Documentation Page
+*/
+ .cases-documentation {
+     width: 85%;
+     margin-top: 40px;
+     margin-left: 40px;
+ }
+
+ .case-title, .cases {
+     width: 100%;
+ }
+
+ .case-title > p {
+    color: var(--otherGrey);
+ }
+
+ .case-title, .case {
+     display: flex;
+     height: 6vh;
+     align-items: center;
+     color: var(--otherGrey);
+ }
+
+ .case-title > *, .case > * {
+     width: 22.5%;
+     font-size: 20px !important;
+
+ }
+
+ .cases-documentation input[type="checkbox"]{
+    width: 30px;
+    height: 30px; 
+    cursor: pointer;
+    margin: 0 20px;
+  }
+
+  .case-title input[type="checkbox"] {
+      margin-left: 27px;
+  }
+
+
+ .cases {
+     overflow-y: auto;
+     height: 65vh;
+ }
+
+ .cases::-webkit-scrollbar {
+    background-color:#fff;
+    width:10px;
+    
+}
+
+.cases::-webkit-scrollbar-track {
+    background-color:#fff
+}
+
+.cases::-webkit-scrollbar-thumb {
+    background-color:rgba(169, 179, 210,0.2);
+    border-radius:16px;
+    border:1px solid #fff;
+}
+
+
+ .case {
+     background-color: var(--white);
+     margin-bottom: 15px;
+     border-radius: 9px;
+ }
+ .case > p {
+    color: var(--otherGrey);
+ }
+
+ .blue {
+     border-left: 9px solid #008EFF;
+ }
+
+ .green {
+    border-left: 9px solid #2be1cb;
+ }
+
+ .cases-documentation select {
+    border: 0px;
+    background: none;
+    outline: none;
+    font-size: 15px;
+    
+    cursor: pointer;
+ }
